@@ -9,7 +9,7 @@ def parseLine(line):
 
 
 # Spark v3.0.1
-spark = SparkSession.builder.master("local").appName("RatingsHistogram").getOrCreate()
+spark = SparkSession.builder.master("local").appName("MinTemp").getOrCreate()
 spark.sparkContext.setLogLevel("ERROR")
 
 lines = spark.read.option("header", False).csv("./data/1800_weather.csv")
