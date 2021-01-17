@@ -12,4 +12,3 @@ with open("data/fake_person.txt", "w") as file:
         age = fake.random_int(18, 55)  # how old
         friends = fake.random_int(0, 500)  # how many friends this person has
         file.write(f"{i},{name},{age},{friends}\n")
-
