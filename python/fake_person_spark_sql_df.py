@@ -1,15 +1,5 @@
 from pyspark.sql import Row, SparkSession
 
-
-def parseLine(line):
-    return Row(
-        id=int(line[0]),
-        name=str(line[1].encode("utf-8")),
-        age=int(line[2]),
-        numFriends=int(line[3]),
-    )
-
-
 # Spark v3.0.1
 spark = SparkSession.builder.master("local").appName("SparkSQL").getOrCreate()
 spark.sparkContext.setLogLevel("ERROR")
