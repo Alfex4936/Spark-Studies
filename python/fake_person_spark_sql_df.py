@@ -1,4 +1,4 @@
-from pyspark.sql import Row, SparkSession
+from pyspark.sql import SparkSession
 
 # Spark v3.0.1
 spark = SparkSession.builder.master("local").appName("SparkSQL").getOrCreate()

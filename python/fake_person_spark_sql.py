@@ -23,7 +23,7 @@ schemaPeople.createOrReplaceTempView("people")  # db name
 # Option 1
 teens = spark.sql("SELECT * FROM people WHERE age >= 13 AND age <= 19")
 for teen in teens.collect():
-    print(teen.name.decode("utf-8"), teen.age, teen.numFriends)
+    print(teen.name, teen.age, teen.numFriends)
 
 # Option 2
 schemaPeople.groupBy("age").count().orderBy("age").show()
