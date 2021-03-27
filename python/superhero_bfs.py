@@ -54,13 +54,13 @@ def bfsReduce(data1, data2):
     edges2, distance2, color2 = data2
 
     distance = INF
-    color = COLORS[0]
+    color = color1
     edges = []
 
     if edges1:
-        edges = edges1
+        edges.extend(edges1)
     elif edges2:
-        edges = edges2
+        edges.extend(edges2)
 
     if distance1 < distance:
         distance = distance1
@@ -71,6 +71,10 @@ def bfsReduce(data1, data2):
         color = color2
     if color2 == COLORS[2] and color2 == COLORS[1]:
         color = color2
+    if color2 == COLORS[0] and (color1 == COLORS[2] or color1 == COLORS[1]):
+        color = color1
+    if color2 == COLORS[2] and color1 == COLORS[1]:
+        color = color1
 
     return edges, distance, color
 
